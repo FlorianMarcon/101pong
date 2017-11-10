@@ -1,0 +1,43 @@
+#!/usr/bin/python3
+##
+##
+##
+##
+##
+import sys;
+from math import *;
+
+
+i = 0
+t = 0;
+print ("The speed vector speed coordinates are:")
+varx = float(sys.argv[4]) - float(sys.argv[1])
+vary = float(sys.argv[5]) - float(sys.argv[2])
+varz = float(sys.argv[6]) - float(sys.argv[3])
+vector_speed = [varx, vary, varz]
+print ("(", round(varx, 2), ";", vary, ";", varz, ")")
+while i <= 2:
+    vector_speed[i] = (vector_speed[i] * float(sys.argv[7])) + float(sys.argv[i + 4])
+    i = i + 1
+print("At time t+", sys.argv[7], ", ball coordinates will be :")
+print("(", vector_speed[0], ";", vector_speed[1], ";", vector_speed[2],")")
+vector_speed = [varx, vary, varz]
+vector = [float(sys.argv[1]), float(sys.argv[2]), float(sys.argv[3])]
+if vector[2] == vector_speed[2] * vector[2] and vector[2] != 0:
+    print ("The ball won't reach the bat.")
+elif vector[2] > 0 and vector[2] < vector_speed[2] *vector[2]:
+    print ("The ball won't reach the bat.")
+elif vector[2] < 0 and vector[2] > vector_speed[2] *vector[2]:
+    print ("The ball won't reach the bat.")
+else:
+    bat = [vector_speed[0], vector_speed[1]]
+    bat = sqrt(pow(bat[0], 2) + pow(bat[1], 2))
+    vector_speed = sqrt(pow(vector_speed[0], 2) + pow(vector_speed[1], 2) + pow(vector_speed[2], 2))
+    if vector_speed == 0:
+        print ("not is a vector")
+    else:
+        result = acos(bat/vector_speed)
+        result= degrees(result)
+        result = round(result, 2)
+        print ("The incidence angle is :")
+        print (result, "degrees")
