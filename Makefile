@@ -5,15 +5,16 @@
 ## 
 ##
 
-SRC	=
+SRC	=	$(wildcard *.c)
 
 OBJ	=	$(SRC:.c=.o)
 
-NAME	=
+NAME	=	101pong
 
-CFLAGS	=
+CFLAGS	=	-W -Wall -Wextra -Werror 
 
-all:	clean
+all:	$(OBJ)
+	gcc -o $(NAME) $(OBJ) -lm
 
 clean:
 		rm -f $(OBJ)
