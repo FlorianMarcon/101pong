@@ -75,5 +75,6 @@ int	main(int ac, char **av)
 		pong(av);
 		return (0);
 	}
+	printf("Usage: ./101pong x0 y0 z0 x1 y1 z1 n\n");
 	return (84);
 }

@@ -17,11 +17,11 @@ all:	$(OBJ)
 	gcc -o $(NAME) $(OBJ) -lm
 
 clean:
-		rm -f $(OBJ)
-		rm -f *~
-		rm -f *#
+	rm -f $(OBJ)
+	rm -f *~
+	rm -f *#
 
-fclean:		clean
-		rm -f $(NAME)
+fclean:	clean
+	rm -f $(NAME)
 
 re:	fclean all
